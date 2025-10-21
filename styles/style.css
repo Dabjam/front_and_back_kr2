@@ -1,0 +1,137 @@
+:root, [data-theme="light"] {
+    --bs-primary: #667eea;
+    --bs-primary-rgb: 102, 126, 234;
+    --gradient-header: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-page-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-footer: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --shadow-card: 0 5px 20px rgba(0, 0, 0, 0.08);
+    --border-card: #e9ecef;
+    --color-text-secondary: #7f8c8d;
+}
+
+[data-theme="dark"] {
+    --bs-primary: #5c6bc0;
+    --bs-primary-rgb: 92, 107, 192;
+    --gradient-header: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+    --gradient-primary: linear-gradient(135deg, #5c6bc0 0%, #3f51b5 100%);
+    --gradient-page-bg: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+    --gradient-footer: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+    --shadow-card: 0 5px 20px rgba(0, 0, 0, 0.3);
+    --border-card: #3a3a3a;
+    --color-text-secondary: #b0b0b0;
+    --bs-light: #2c2c2c;
+    --bs-dark: #e0e0e0;
+}
+
+body {
+    background: var(--gradient-page-bg);
+    transition: background 0.3s ease;
+    color: var(--bs-body-color);
+}
+
+header, .navbar {
+    background: var(--gradient-header) !important;
+}
+
+footer {
+    background: var(--gradient-footer) !important;
+}
+
+.card {
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-card);
+    transition: transform 0.3s ease;
+    padding: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.nav-link {
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+.progress-bar {
+    background-color: var(--bs-primary);
+}
+
+.badge {
+    background-color: var(--bs-primary);
+    font-size: 1rem;
+}
+
+.modal-content {
+    background: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+.modal-header {
+    background: var(--gradient-header);
+    color: white;
+}
+
+.dowloand_resume {
+    background: var(--gradient-primary);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    color: white;
+    transition: transform 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.dowloand_resume:hover {
+    transform: translateY(-2px);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.card-text {
+    font-size: 1.1rem;
+}
+
+/* Убрал зеленое выделение */
+.card--selected {
+    border: 1px solid var(--border-card);
+    background: transparent;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .progress {
+        height: 10px;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    .h3 {
+        font-size: 1.5rem;
+    }
+    .card-body {
+        padding: 1.5rem;
+    }
+    .card-title {
+        font-size: 1.3rem;
+    }
+    .card-text {
+        font-size: 1rem;
+    }
+    .dowloand_resume {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}

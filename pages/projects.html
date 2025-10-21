@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body data-theme="light" class="bg-light">
+    <div class="container-fluid p-0 d-flex flex-column min-vh-100">
+        <!-- Header -->
+        <header class="text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <img src="images/logo.png" alt="Логотип" class="logo" style="width: 50px; height: 50px;">
+                    </div>
+                    <div class="col">
+                        <h1 class="h3 mb-1">Поздышев Эдуард</h1>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-primary">ЭФБО-13-24</span>
+                        <button class="theme-toggle btn btn-link text-white ms-3" onclick="toggleTheme()">🌙</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="/index.html"><i
+                                    class="bi bi-house me-1"></i>Главная</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="projects.html"><i
+                                    class="bi bi-newspaper me-1"></i>Проекты</a></li>
+                        <li class="nav-item"><a class="nav-link" href="diary.html"><i
+                                    class="bi bi-code-slash me-1"></i>Дневник</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacts.html"><i
+                                    class="bi bi-telephone me-1"></i>Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Content -->
+        <main class="container my-5 flex-grow-1">
+            <section class="mb-5">
+                <h2 class="h4 mb-4">Мои проекты</h2>
+                <div class="mb-3">
+                    <button class="btn btn-primary me-2 filter-btn" data-filter="all">Все</button>
+                    <button class="btn btn-primary me-2 filter-btn" data-filter="html">HTML</button>
+                    <button class="btn btn-primary me-2 filter-btn" data-filter="js">JS</button>
+                    <button class="btn btn-primary filter-btn" data-filter="react">React</button>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 project-grid">
+                    <div class="col project-item" data-category="html">
+                        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                            <div class="card-body">
+                                <h5 class="card-title">Личный сайт</h5>
+                                <p class="card-text">HTML, CSS</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col project-item" data-category="js">
+                        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                            <div class="card-body">
+                                <h5 class="card-title">Todo-приложение</h5>
+                                <p class="card-text">JavaScript</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col project-item" data-category="react">
+                        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                            <div class="card-body">
+                                <h5 class="card-title">Интернет-магазин</h5>
+                                <p class="card-text">React</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col project-item" data-category="html">
+                        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal4">
+                            <div class="card-body">
+                                <h5 class="card-title">Портфолио</h5>
+                                <p class="card-text">Bootstrap</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Modals -->
+            <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="projectModalLabel1">Личный сайт</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Личный сайт с адаптивной версткой, созданный с использованием HTML и CSS.</p>
+                            <img src="images/project1.png" alt="Скриншот" class="img-fluid mb-3">
+                            <a href="https://dabjam.github.io/front_and_back_kr1/" class="btn btn-primary me-2">Живая
+                                версия</a>
+                            <a href="https://github.com/Dabjam/front_and_back_kr1" class="btn btn-secondary">Исходный
+                                код</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="projectModalLabel2">Todo-приложение</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Простое приложение для управления задачами на JavaScript.</p>
+                            <img src="images/project2.png" alt="Скриншот" class="img-fluid mb-3">
+                            <a href="https://example.com/project2" class="btn btn-primary me-2">Живая версия</a>
+                            <a href="https://github.com/Dabjam" class="btn btn-secondary">Исходный код</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModalLabel3"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="projectModalLabel3">Интернет-магазин</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Интернет-магазин с корзиной, реализованный на React.</p>
+                            <img src="images/project3.png" alt="Скриншот" class="img-fluid mb-3">
+                            <a href="https://github.com/Dabjam" class="btn btn-primary me-2">Живая версия</a>
+                            <a href="https://github.com/Dabjam" class="btn btn-secondary">Исходный код</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="projectModal4" tabindex="-1" aria-labelledby="projectModalLabel4"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="projectModalLabel4">Портфолио</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Портфолио с использованием Bootstrap для адаптивного дизайна.</p>
+                            <img src="images/project4.png" alt="Скриншот" class="img-fluid mb-3">
+                            <a href="https://dabjam.github.io/front_and_back_kr1/" class="btn btn-primary me-2">Живая
+                                версия</a>
+                            <a href="https://github.com/Dabjam/front_and_back_kr1" class="btn btn-secondary">Исходный
+                                код</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">© 2025 Портфолио. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.getAttribute('data-filter');
+
+                    projectItems.forEach(item => {
+                        if (filter === 'all') {
+                            item.style.display = 'block';
+                        } else if (item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+            });
+
+            // Активируем "Все" по умолчанию
+            document.querySelector('[data-filter="all"]').classList.add('active');
+        });
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            body.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
+        }
+    </script>
+</body>
+
+</html>
