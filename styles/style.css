@@ -103,7 +103,6 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Убрал зеленое выделение */
 .card--selected {
     border: 1px solid var(--border-card);
     background: transparent;
