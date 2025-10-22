@@ -109,6 +109,32 @@ footer {
     background: transparent;
 }
 
+/* Стили для контактной формы */
+.form-label {
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 5px rgba(var(--bs-primary-rgb), 0.5);
+}
+
+.invalid-feedback {
+    display: none;
+}
+
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback {
+    display: block;
+}
+
+.was-validated .form-control:valid {
+    border-color: #28a745;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .progress {
