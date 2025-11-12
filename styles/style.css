@@ -24,11 +24,22 @@
     --bs-dark: #e0e0e0;
 }
 
+html, body { height: 100%; }
 body {
-    background: var(--gradient-page-bg);
-    transition: background 0.3s ease;
-    color: var(--bs-body-color);
+    margin: 0;
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f8f9fc;
+    color: #0b1020;
 }
+
+.page {
+    min-height: 100vh; 
+    min-height: 100dvh; 
+    display: flex;
+    flex-direction: column;
+}
+
+main { flex: 1; }
 
 header, .navbar {
     background: var(--gradient-header) !important;
@@ -108,7 +119,6 @@ footer {
     background: transparent;
 }
 
-/* Стили для контактной формы */
 .form-label {
     font-weight: 500;
 }
@@ -134,7 +144,6 @@ footer {
     border-color: #28a745;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .progress {
         height: 10px;
@@ -160,3 +169,83 @@ footer {
         font-size: 1rem;
     }
 }
+/*  */
+:root {
+    color-scheme: light dark;
+}
+
+.skip-link {
+    position: absolute;
+    inset-inline-start: 1rem;
+    inset-block-start: -100%;
+    z-index: 10000;
+    padding: .5rem .75rem;
+    background: #111;
+    color: #fff;
+    border-radius: .5rem;
+    text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    inset-block-start: 1rem;
+}
+
+:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+    a, button, .nav-link {
+        min-height: 44px;
+        padding: .75rem 1rem;
+    }
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    isolation: isolate;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+.navbar .container {
+    padding-top: calc(.75rem + env(safe-area-inset-top));
+    padding-bottom: .75rem;
+    padding-inline-start: calc(1rem + env(safe-area-inset-left));
+    padding-inline-end: calc(1rem + env(safe-area-inset-right));
+}
+
+.hero__photo {
+    inline-size: 200px;
+    block-size: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.projects-preview__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: .75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: transform .2s ease;
+    min-width: 0;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-card__title,
+.project-card__description {
+    overflow-wrap: anywhere;
+}
+

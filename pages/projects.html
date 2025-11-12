@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Проекты</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -10,8 +10,8 @@
     <link rel="icon" href="../images/icon.ico" type="image/x-icon">
 </head>
 <body data-theme="light" class="bg-light">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
     <div class="container-fluid p-0 d-flex flex-column min-vh-100">
-        <!-- Header -->
         <header class="text-white py-4">
             <div class="container">
                 <div class="row align-items-center">
@@ -23,12 +23,11 @@
                     </div>
                     <div class="col-auto">
                         <span class="badge bg-light text-primary">ЭФБО-13-24</span>
-                        <button class="theme-toggle btn btn-link text-white ms-3" onclick="toggleTheme()">🌙</button>
+                        <button class="theme-toggle btn btn-link text-white ms-3" onclick="toggleTheme()">Тема</button>
                     </div>
                 </div>
             </div>
         </header>
-        <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -44,120 +43,53 @@
                 </div>
             </div>
         </nav>
-        <!-- Main Content -->
-        <main class="container my-5 flex-grow-1">
+        <main id="main" class="container my-5 flex-grow-1">
             <section class="mb-5">
                 <div class="card shadow-sm">
                     <div class="card-header bg-light">
-                        <h3 class="card-title h4 mb-0"><i class="bi bi-folder-fill text-primary"></i> Мои проекты</h3>
+                        <h3 class="card-title h4 mb-0">Мои проекты</h3>
                     </div>
                     <div class="card-body">
-                        <div class="mb-3">
-                            <button class="btn btn-primary me-2 filter-btn" data-filter="all">Все</button>
-                            <button class="btn btn-primary me-2 filter-btn" data-filter="html">HTML</button>
-                            <button class="btn btn-primary me-2 filter-btn" data-filter="js">JS</button>
+                        <div class="mb-4">
+                            <button class="btn btn-primary me-2 filter-btn active" data-filter="all">Все</button>
+                            <button class="btn btn-primary me-2 filter-btn" data-filter="html">HTML/CSS</button>
+                            <button class="btn btn-primary me-2 filter-btn" data-filter="js">JavaScript</button>
                             <button class="btn btn-primary filter-btn" data-filter="react">React</button>
                         </div>
-                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 project-grid">
-                            <div class="col project-item" data-category="html">
-                                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal1">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Личный сайт</h5>
-                                        <p class="card-text">HTML, CSS</p>
-                                    </div>
+
+                        <div class="projects-preview__grid">
+                            <div class="project-card" data-category="html" data-bs-toggle="modal" data-bs-target="#modal1">
+                                <img src="../images//projects/project_1.jpg" class="card-img-top" alt="Личный сайт" style="height: 150px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="project-card__title">Личный сайт</h5>
+                                    <p class="project-card__description small text-muted">Адаптивный сайт с уникальным дизайном...</p>
+                                    <div class="mb-2"><span class="badge bg-primary">HTML/CSS</span></div>
                                 </div>
                             </div>
-                            <div class="col project-item" data-category="js">
-                                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal2">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Todo-приложение</h5>
-                                        <p class="card-text">JavaScript</p>
-                                    </div>
+
+                            <div class="project-card card--selected" data-category="js" data-bs-toggle="modal" data-bs-target="#modal2">
+                                <img src="../images//projects/project_2.jpg" class="card-img-top" alt="Todo-приложение" style="height: 150px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="project-card__title">Todo-приложение</h5>
+                                    <p class="project-card__description small text-muted">Интерактивное приложение...</p>
+                                    <div class="mb-2"><span class="badge bg-success">JavaScript</span></div>
                                 </div>
                             </div>
-                            <div class="col project-item" data-category="react">
-                                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal3">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Интернет-магазин</h5>
-                                        <p class="card-text">React</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col project-item" data-category="html">
-                                <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal4">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Портфолио</h5>
-                                        <p class="card-text">Bootstrap</p>
-                                    </div>
+
+                            <div class="project-card" data-category="react" data-bs-toggle="modal" data-bs-target="#modal3">
+                                <img src="../images//projects/project_3.jpg" class="card-img-top" alt="Интернет-магазин" style="height: 150px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="project-card__title">Интернет-магазин</h5>
+                                    <p class="project-card__description small text-muted">Онлайн-магазин с корзиной...</p>
+                                    <div class="mb-2"><span class="badge bg-info">React</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- Modals -->
-            <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="projectModalLabel1">Личный сайт</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Личный сайт с адаптивной версткой, созданный с использованием HTML и CSS.</p>
-                            <a href="https://dabjam.github.io/front_and_back_kr1/" class="btn btn-primary me-2">Живая версия</a>
-                            <a href="https://github.com/Dabjam/front_and_back_kr1" class="btn btn-secondary">Исходный код</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="projectModalLabel2">Todo-приложение</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Простое приложение для управления задачами на JavaScript.</p>
-                            <a href="https://example.com/project2" class="btn btn-primary me-2">Живая версия</a>
-                            <a href="https://github.com/Dabjam" class="btn btn-secondary">Исходный код</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModalLabel3" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="projectModalLabel3">Интернет-магазин</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Интернет-магазин с корзиной, реализованный на React.</p>
-                            <a href="https://github.com/Dabjam" class="btn btn-primary me-2">Живая версия</a>
-                            <a href="https://github.com/Dabjam" class="btn btn-secondary">Исходный код</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="projectModal4" tabindex="-1" aria-labelledby="projectModalLabel4" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="projectModalLabel4">Портфолио</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Портфолио с использованием Bootstrap для адаптивного дизайна.</p>
-                            <a href="https://dabjam.github.io/front_and_back_kr1/" class="btn btn-primary me-2">Живая версия</a>
-                            <a href="https://github.com/Dabjam/front_and_back_kr1" class="btn btn-secondary">Исходный код</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </main>
-        <!-- Footer -->
+
         <footer class="text-white py-4">
             <div class="container">
                 <div class="row align-items-center">
@@ -165,46 +97,46 @@
                         <p class="mb-0">© 2025 Портфолио. Все права защищены.</p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="pages/contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
                         <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+    <div class="modal fade" id="modal1" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Личный сайт</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Адаптивный сайт с тёмной темой...</p>
+                    <a href="#" class="btn btn-primary me-2" target="_blank">Живая версия</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/front_and_back_kr2/scripts/script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectItems = document.querySelectorAll('.project-item');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const filter = button.getAttribute('data-filter');
-
-                    projectItems.forEach(item => {
-                        if (filter === 'all') {
-                            item.style.display = 'block';
-                        } else if (item.getAttribute('data-category') === filter) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.project-card').forEach(card => {
+                    card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
                 });
             });
-
-            // Активируем "Все" по умолчанию
-            document.querySelector('[data-filter="all"]').classList.add('active');
         });
+
         function toggleTheme() {
             const body = document.body;
-            const currentTheme = body.getAttribute('data-theme');
-            body.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
+            const current = body.getAttribute('data-theme');
+            body.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
         }
     </script>
 </body>
